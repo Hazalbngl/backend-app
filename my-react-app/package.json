@@ -1,19 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "backend-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
-=======
-  "name": "frontend-app",
+  "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -48,6 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
->>>>>>> origin/main
   }
 }
