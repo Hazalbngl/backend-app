@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI/CD for Backend App
 
 on:
   push:
@@ -10,22 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2  # En son sürüm
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3  # En son sürüm
-      with:
-        node-version: '15'  # Node.js sürümünü belirtin
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
 
-    - name: Install Dependencies and Build
-      run: |
-        cd frontend-app
-        npm install
-        npm run build
+      - name: Install Dependencies
+        run: npm install
 
-    - name: Install Dependencies and Test
-      run: |
-        cd backend-app
-        npm install
-        npm test
+      - name: Test
+        run: npm test
