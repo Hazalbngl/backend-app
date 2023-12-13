@@ -11,29 +11,21 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2.5.0  # Güncellenmiş bir sürümü kullanabilirsiniz.
+      uses: actions/checkout@v2.5.0
 
     - name: Set up Node.js
-      uses: actions/setup-node@v17
+      uses: actions/setup-node@v14  # En yüksek desteklenen sürüm
       with:
-        node-version: '17'
+        node-version: '14'
 
-    - name: Install Dependencies
-      run: |
-        cd frontend-app  # Frontend dizinine gidin
-        npm install
-
-    - name: Build Frontend
+    - name: Install Dependencies and Build
       run: |
         cd frontend-app
+        npm install
         npm run build
 
-    - name: Install Dependencies
-      run: |
-        cd backend-app  # Backend dizinine gidin
-        npm install
-
-    - name: Test Backend
+    - name: Install Dependencies and Test
       run: |
         cd backend-app
+        npm install
         npm test
