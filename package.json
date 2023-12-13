@@ -69,7 +69,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node your-build-script.js"
+    "build": "npm install"
   },
   "keywords": [],
   "author": "",
