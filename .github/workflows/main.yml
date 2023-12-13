@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2.5.0
+      uses: actions/checkout@v2  # En son sürüm
 
     - name: Set up Node.js
       uses: actions/setup-node@v3  # En son sürüm
