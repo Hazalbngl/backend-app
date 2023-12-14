@@ -1,0 +1,34 @@
+name: Collect and Send Metrics
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  collect-and-send-metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Metrics Script
+        run: npm run collect-metrics
+
+      - name: Send Metrics to Grafana
+        run: |
+          # Your script or command to send metrics to Grafana
+          # Use the GitHub Secrets here, for example:
+          echo "GRAFANA_ENDPOINT: ${{ secrets.GRAFANA_ENDPOINT }}"
+          echo "GRAFANA_API_KEY: ${{ secrets.GRAFANA_API_KEY }}"
+          echo "GRAFANA_ORG: ${{ secrets.GRAFANA_ORG }}"
+          echo "GRAFANA_DASHBOARD: ${{ secrets.GRAFANA_DASHBOARD }}"
