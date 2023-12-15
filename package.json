@@ -70,7 +70,8 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install",
-    "collect-metrics": "node metrics/collect-backend-metrics.js"
+    "collect-metrics": "node metrics/collect-backend-metrics.js",
+    "test": "mocha tests/*.test.js"
   },
   "keywords": [],
   "author": "",
