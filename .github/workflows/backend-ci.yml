@@ -10,27 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 14
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
 
-    - name: Install Dependencies
-      run: |
-        cd backend
-        npm install
+      - name: Install Dependencies
+        run: |
+          cd backend-app
+          npm install
 
-    - name: Run Tests
-      run: |
-        cd backend
-        npm test
-
-    - name: Simulate Test Failure
-      run: |
-        cd backend
-        echo "Test failed!" > test-result.txt
-        exit 1
-      continue-on-error: true
+      - name: Run Tests
+        run: |
+          cd backend-app
+          npm test
